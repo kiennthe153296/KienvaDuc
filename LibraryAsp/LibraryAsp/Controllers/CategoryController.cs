@@ -26,5 +26,12 @@ namespace LibraryAsp.Controllers
             category.add(pub);
             return RedirectToAction("Index", new { msg = "1" });
         }
+
+        [HttpPost]
+        public ActionResult Edit(int catId)
+        {
+
+            return RedirectToAction("Index", new { msg = "1" });
+        }
     }
 }
