@@ -10,7 +10,7 @@
     <div class="container-fluid px-4">
         <h1 class="mt-4">Danh sách Loại sách</h1>
 
-
+        
         <div class="card mb-4">
             <div class="card-header">
                 @if (ViewBag.Msg == "1")
@@ -30,23 +30,60 @@
                         <tr style="background-color:gray">
                             <th>STT</th>
                             <th>Tên Loại Sách</th>
+                            <th>Hành Động</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th>STT</th>
                             <th>Tên Loại Sách</th>
+                            <th>Hành Động</th>
                         </tr>
                     </tfoot>
                     <tbody>
                         @{ var stt = 1;}
                         @foreach (var item in ViewBag.List)
                         {
+                            var itemName = "#exampleModalss" + item.id_category;
+                            var itemName1 = "exampleModalss" + item.id_category;
                             <tr>
                                 <td>@stt</td>
                                 <td>@item.name</td>
+                                <td>
+                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" 
+                                            data-bs-target="@itemName">Chỉnh Sửa</button>
+                                </td>
                             </tr>
                             stt++;
+
+                            <form action="/Category/edit" method="post">
+                                <div class="modal fade" id="@itemName1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Sửa Loại Sách</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div id="resultss" class="modal-body">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="">
+                                                            <label for="category-film" class="col-form-label" style="font-weight:bold;width : 140px">Tên Loại Sách: </label>
+                                                            <input class="form-control" type="text" id="name" name="name" value=@item.name>
+                                                            <input class="form-control" type="hidden" id="id_category" name="id_category" value=@item.id_category>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button style="width:100px" type="submit" class="btn btn-primary">Sửa</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </form>
                         }
                     </tbody>
                 </table>
@@ -84,5 +121,4 @@
         </div>
     </div>
 </div>
-
 

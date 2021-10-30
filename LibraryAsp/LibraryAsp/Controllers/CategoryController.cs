@@ -11,6 +11,7 @@ namespace LibraryAsp.Controllers
     public class CategoryController : Controller
     {
         CategoryDao category = new CategoryDao();
+        LibraryDbContext _context = new LibraryDbContext();
         // GET: Category
         public ActionResult Index(string msg)
         {
@@ -28,10 +29,12 @@ namespace LibraryAsp.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(int catId)
+        public ActionResult edit(FormCollection form)
         {
-
-            return RedirectToAction("Index", new { msg = "1" });
+            Category cat = new Category();
+            cat.id_category = Convert.ToInt32(form["id_category"]);
+            category.edit(cat);
+            return PartialView("Index", new { msg = "1" });
         }
     }
 }
