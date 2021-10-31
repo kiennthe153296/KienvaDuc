@@ -170,6 +170,7 @@ C:\Users\Trung Ducc\source\repos\KienvaDuc\LibraryAsp\LibraryAsp\obj\Debug\Libra
 C:\Users\Trung Ducc\source\repos\KienvaDuc\LibraryAsp\LibraryAsp\obj\Debug\LibraryAsp.csproj.CopyComplete
 C:\Users\Trung Ducc\source\repos\KienvaDuc\LibraryAsp\LibraryAsp\obj\Debug\LibraryAsp.dll
 C:\Users\Trung Ducc\source\repos\KienvaDuc\LibraryAsp\LibraryAsp\obj\Debug\LibraryAsp.pdb
+<<<<<<< HEAD
 F:\Semester 5\PRN292\KienvaDuc\LibraryAsp\LibraryAsp\bin\LibraryAsp.dll.config
 F:\Semester 5\PRN292\KienvaDuc\LibraryAsp\LibraryAsp\bin\LibraryAsp.dll
 F:\Semester 5\PRN292\KienvaDuc\LibraryAsp\LibraryAsp\bin\LibraryAsp.pdb
@@ -348,3 +349,6 @@ F:\Semester 5\PRN292\KienvaDuc\LibraryAsp\LibraryAsp\bin\pt-BR\Microsoft.Data.Sq
 F:\Semester 5\PRN292\KienvaDuc\LibraryAsp\LibraryAsp\bin\ru\Microsoft.Data.SqlClient.resources.dll
 F:\Semester 5\PRN292\KienvaDuc\LibraryAsp\LibraryAsp\bin\zh-Hans\Microsoft.Data.SqlClient.resources.dll
 F:\Semester 5\PRN292\KienvaDuc\LibraryAsp\LibraryAsp\bin\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+=======
+C:\Users\Trung Ducc\source\repos\KienvaDuc\LibraryAsp\LibraryAsp\obj\Debug\LibraryAsp.Migrations.Addpostsmodel.resources
+>>>>>>> 1164f74053921c3c0830359fd7e4ed3aec0b5f35

@@ -308,10 +308,15 @@
     <Compile Include="Migrations\202110210939264_ff.Designer.cs">
       <DependentUpon>202110210939264_ff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110310400028_Add posts model.cs" />
+    <Compile Include="Migrations\202110310400028_Add posts model.designer.cs">
+      <DependentUpon>202110310400028_Add posts model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\LibraryDbContext.cs" />
+    <Compile Include="Models\Post.cs" />
     <Compile Include="Models\Publisher.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Transaction.cs" />
@@ -354,6 +359,7 @@
     <Content Include="Content\js\lightslider.js" />
     <Content Include="Content\js\popper.min.js" />
     <Content Include="Content\js\scripts.js" />
+    <Content Include="Content\js\site.js" />
     <Content Include="Content\vendor\animate\animate.css" />
     <Content Include="Content\vendor\animsition\css\animsition.css" />
     <Content Include="Content\vendor\animsition\css\animsition.min.css" />
@@ -502,6 +508,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110210939264_ff.resx">
       <DependentUpon>202110210939264_ff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110310400028_Add posts model.resx">
+      <DependentUpon>202110310400028_Add posts model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,8 +1,9 @@
-﻿using LibraryAsp.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using LibraryAsp.Models;
 
 namespace LibraryAsp.Dao
 {
@@ -21,8 +22,17 @@ namespace LibraryAsp.Dao
         }
         public void edit(Category category)
         {
-            var result = myDb.categories.SingleOrDefault(c => c.id_category == category.id_category);
-            result.name = category.name;
+            string sql = "update dbo.Categories set [name] = @nameCat where id_category = @idCat";
+
+            myDb.Database.ExecuteSqlCommand(sql, new SqlParameter("@nameCat", category.name),
+                new SqlParameter("@idCat", category.id_category)
+            );
+        }
+
+        public void delete(int catId)
+        {
+            var result = myDb.categories.Where(x => x.id_category == catId).SingleOrDefault();
+            myDb.categories.Remove(result);
             myDb.SaveChanges();
         }
     }

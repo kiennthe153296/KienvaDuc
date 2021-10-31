@@ -29,12 +29,23 @@ namespace LibraryAsp.Controllers
         }
 
         [HttpPost]
-        public ActionResult edit(FormCollection form)
+        public ActionResult Edit(FormCollection form)
         {
             Category cat = new Category();
             cat.id_category = Convert.ToInt32(form["id_category"]);
+            cat.name = form["name"];
             category.edit(cat);
-            return PartialView("Index", new { msg = "1" });
+            return RedirectToAction("Index", new { msg = "1" });
         }
+
+        [HttpPost]
+        public ActionResult DeleteCategory(FormCollection form)
+        {
+            Category cat = new Category();
+            cat.id_category = Convert.ToInt32(form["id"]);
+            category.delete(cat.id_category);
+            return RedirectToAction("Index", new { msg="1"});
+        }
+
     }
 }
