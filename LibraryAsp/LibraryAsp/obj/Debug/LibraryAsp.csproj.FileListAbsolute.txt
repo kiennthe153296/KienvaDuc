@@ -170,3 +170,4 @@ C:\Users\Trung Ducc\source\repos\KienvaDuc\LibraryAsp\LibraryAsp\obj\Debug\Libra
 C:\Users\Trung Ducc\source\repos\KienvaDuc\LibraryAsp\LibraryAsp\obj\Debug\LibraryAsp.csproj.CopyComplete
 C:\Users\Trung Ducc\source\repos\KienvaDuc\LibraryAsp\LibraryAsp\obj\Debug\LibraryAsp.dll
 C:\Users\Trung Ducc\source\repos\KienvaDuc\LibraryAsp\LibraryAsp\obj\Debug\LibraryAsp.pdb
+C:\Users\Trung Ducc\source\repos\KienvaDuc\LibraryAsp\LibraryAsp\obj\Debug\LibraryAsp.Migrations.Addpostsmodel.resources

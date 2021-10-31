@@ -39,10 +39,12 @@ namespace LibraryAsp.Controllers
         }
 
         [HttpPost]
-        public ActionResult DeleteCategory(int id)
+        public ActionResult DeleteCategory(FormCollection form)
         {
-            category.delete(id);
-            return RedirectToAction("CustomerList");
+            Category cat = new Category();
+            cat.id_category = Convert.ToInt32(form["id"]);
+            category.delete(cat.id_category);
+            return RedirectToAction("Index", new { msg="1"});
         }
 
     }

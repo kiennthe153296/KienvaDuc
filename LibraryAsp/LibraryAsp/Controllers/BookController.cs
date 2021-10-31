@@ -42,6 +42,11 @@ namespace LibraryAsp.Controllers
             return RedirectToAction("Index", new { msg = "1" });
         }
 
-
+        // Delede information of book
+        [HttpPost]
+        public ActionResult Delete(FormCollection form)
+        {
+            return RedirectToAction("Index", new { msg = "1" });
+        }
     }
 }

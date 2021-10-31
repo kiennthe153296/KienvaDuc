@@ -48,6 +48,10 @@
                         @{ var stt = 1;}
                         @foreach (var item in ViewBag.List)
                         {
+                            var itemName = "#edit" + item.id_book;
+                            var itemName1 = "edit" + item.id_book;
+                            var deleteItem = "#delete" + item.id_book;
+                            var deleteItem1 = "delete" + item.id_book;
                             <tr>
                                 <td>@stt</td>
                                 <td>
@@ -78,15 +82,24 @@
                                     @{
                                         var idModelDes = "exampleModalDes" + item.id_book;
                                     }
+                                    <!-- Button delete details of books-->
                                     <button type="button" class="btn btn-warning" data-bs-toggle="modal"
                                             data-bs-target="#@idModelDes" style="width: 100px !important">
                                         Chi tiết
                                     </button>
 
-                                    <button type="button" class="btn btn-info" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModalEdit">
+                                    <!-- Button edit details of books-->
+                                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                                            data-bs-target="@itemName">
                                         Chỉnh sửa
                                     </button>
+
+                                    <!-- Button to delete information -->
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="@deleteItem"
+                                            style="width:100px" class="btn btn-danger">
+                                        Xóa
+                                    </button>
+
                                 </td>
                             </tr>
                             <!-- Modal img-->
@@ -100,7 +113,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Modal img-->
+                            <!-- Modal detail infor-->
                             <div class="modal fade" id="@idModelDes" tabindex="-1" aria-labelledby="exampleModalLabel"
                                  aria-hidden="true">
                                 <div class="modal-dialog modal-lg">
@@ -154,7 +167,7 @@
                                                     <div class="">
                                                         <label for="category-film" class="col-form-label" style="font-weight:bold;width : 140px">Ngày thêm</label>
                                                         : @item.createdAt
-                                                        
+
                                                     </div>
                                                 </div>
                                                 <div class="">
@@ -167,6 +180,71 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Modal Edit Detail-->
+
+                            <div class="modal fade" id="@itemName1" tabindex="-1" aria-labelledby="" aria-hidden="true">
+                                <div class="modal-dialog modal-xl">
+                                    <form action="/Publisher/Update" method="post">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="">Sửa Nhà Xuất Bản</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div id="resultss" class="modal-body">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="">
+                                                            <label for="category-film" class="col-form-label" style="font-weight:bold;width : 140px">Tên Nhà Xuất Bản: </label>
+                                                            <input class="form-control" type="text" id="name" name="name" value="@item.name">
+                                                            @*<input class="form-control" type="hidden" id="id_publisher" name="id_publisher" value="@item.id_publisher" hidden>*@
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" style="width:100px" class="btn btn-primary">Sửa</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+
+                            <!-- Modal Delete Detail-->
+
+                                <div class="modal fade" id="@deleteItem1" tabindex="-1"
+                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Bạn chắc chắn muốn xóa ?</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                            </div>
+
+                                            <div class="modal-body">
+                                                Nhà xuất bản : @item.name
+                                                <form action="/Publisher/Delete" method="post">
+                                                    <input type="hidden" class="form-control" id="id" name="id" value="@item.id_publisher">
+                                                    <div class="modal-footer" style="margin-top: 20px">
+                                                        <button style="width:100px" type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">
+                                                            Đóng
+                                                        </button>
+                                                        <button style="width:100px" type="submit" class="btn btn-danger"> Xóa</button>
+
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
                             stt++;
                         }
                     </tbody>
